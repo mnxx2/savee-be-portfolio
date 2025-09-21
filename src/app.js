@@ -32,8 +32,9 @@ const app = express();
 // CORS 설정
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
     // origin: "https://polite-dune-0f3b9e800.2.azurestaticapps.net",
+    origin: "https://mnxx2.github.io/portfolio-savee",
     credentials: true,
   })
 );
