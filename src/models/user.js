@@ -29,7 +29,6 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function (models) {
     User.hasMany(models.SupportPost, {
       foreignKey: "userId",
-<<<<<<< HEAD
       as: "user_posts",
     });
 
@@ -68,9 +67,6 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Transaction, {
       foreignKey: "userId",
       as: "user_transactions",
-=======
-      as: "posts",
->>>>>>> c590c19 ([250728]1. post,qna 테이블 생성 및 post CRUD 추가)
     });
   };
   return User;
