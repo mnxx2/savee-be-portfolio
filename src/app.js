@@ -37,7 +37,7 @@ app.use(
     // origin: "https://mnxx2.github.io/portfolio-savee",
     origin: "https://ashy-meadow-07e1a2500.2.azurestaticapps.net",
     credentials: true,
-  })
+  }),
 );
 
 // 미들웨어 설정

@@ -12,22 +12,13 @@ const db = {};
 
 let sequelize;
 
-sequelize = new Sequelize(
-  process.env.DB_DATABASE,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD,
-  {
-    host: process.env.DB_HOST,
-    dialect: "postgres",
-    logging: false,
-    dialectOptions:
-      process.env.DB_SSL === "true"
-        ? {
-            ssl: { require: true, rejectUnauthorized: false },
-          }
-        : {},
-  }
-);
+sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: "postgres",
+  protocol: "postgres",
+  dialectOptions: {
+    ssl: { require: true, rejectUnauthorized: false },
+  },
+});
 
 fs.readdirSync(__dirname)
   .filter((file) => {
@@ -41,7 +32,7 @@ fs.readdirSync(__dirname)
   .forEach((file) => {
     const model = require(path.join(__dirname, file))(
       sequelize,
-      Sequelize.DataTypes
+      Sequelize.DataTypes,
     );
     db[model.name] = model;
   });
