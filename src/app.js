@@ -35,7 +35,7 @@ app.use(
     // origin: "http://localhost:3000",
     // origin: "https://polite-dune-0f3b9e800.2.azurestaticapps.net",
     // origin: "https://mnxx2.github.io/portfolio-savee",
-    origin: "https://ashy-meadow-07e1a2500.2.azurestaticapps.net",
+    origin: "https://savee-fe-portfolio.vercel.app/",
     credentials: true,
   }),
 );
